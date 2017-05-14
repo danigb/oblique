@@ -1,10 +1,15 @@
 # oblique code
 
-## Prerequisites
+An example application with a Clojure/ClojureScript modern stack:
 
-You will need [Leiningen][1] 2.0 or above installed.
+#### Server
 
-[1]: https://github.com/technomancy/leiningen
+- HTTP API - yada https://github.com/juxt/yada
+- Lifecycle - mount https://github.com/tolitius/mount
+
+#### Client
+
+- View - reagent 
 
 ## Running
 
