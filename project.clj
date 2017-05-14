@@ -6,12 +6,19 @@
 
   :dependencies [[org.clojure/clojure "1.8.0" :scope "provided"]
                  [org.clojure/clojurescript "1.9.495" :scope "provided"]
+                 [yada "1.2.2"]
+                 [mount "0.1.11"]
                  [reagent "0.6.1"]]
 
   :plugins [[lein-cljsbuild "1.1.5"]
             [lein-figwheel "0.5.9"]]
 
   :min-lein-version "2.5.0"
+
+  :repl-options {:init-ns user
+                 :welcome (println "Type (dev) to start")}
+
+  :uberjar-name "oblique.jar"
 
   :clean-targets ^{:protect false}
   [:target-path
@@ -26,7 +33,7 @@
              :css-dirs ["public/css"]}
 
   :cljsbuild {:builds {:app
-                       {:source-paths ["src" "env/dev/cljs"]
+                       {:source-paths ["src/cljs" "src/cljc" "env/dev/cljs"]
                         :compiler
                         {:main "oblique.dev"
                          :output-to "public/js/app.js"
@@ -38,7 +45,7 @@
                         :figwheel
                         {:open-urls ["http://localhost:3449/index.html"]}}
                        :release
-                       {:source-paths ["src" "env/prod/cljs"]
+                       {:source-paths ["src/cljs" "src/cljc" "env/prod/cljs"]
                         :compiler
                         {:output-to "public/js/app.js"
                          :output-dir "public/js/release"
@@ -49,5 +56,7 @@
   :aliases {"release" ["do" "clean" ["cljsbuild" "once" "release"]]}
 
   :profiles {:dev {:dependencies [[figwheel-sidecar "0.5.9"]
+                                  [org.clojure/tools.namespace "0.2.11"]
                                   [org.clojure/tools.nrepl "0.2.12"]
-                                  [com.cemerick/piggieback "0.2.2-SNAPSHOT"]]}})
+                                  [com.cemerick/piggieback "0.2.2-SNAPSHOT"]]
+            :source-paths ["dev" "src/clj" "src/cljs"]}})

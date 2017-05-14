@@ -14,6 +14,10 @@ To compile clojurescript, run:
 
 To start a web server for the application, run:
 
-    lein run
+```
+lein repl
+user=> (dev)
+```
+
 
 

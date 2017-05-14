@@ -6,7 +6,7 @@
 
 (defn home-page []
   [:div 
-    [:h2 "Welcome to Reagent"]
+    [:h2 "Oblique Code"]
     [:p "This is it"]])
 
 ;; -------------------------
