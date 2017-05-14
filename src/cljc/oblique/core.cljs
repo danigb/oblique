@@ -1,13 +1,13 @@
 (ns oblique.core
-    (:require [reagent.core :as reagent]))
+  (:require [reagent.core :as reagent]))
 
 ;; -------------------------
 ;; Views
 
 (defn home-page []
-  [:div 
-    [:h2 "Oblique Code"]
-    [:p "This is it"]])
+  [:div
+   [:h2 "Oblique Code"]
+   [:p "This is it"]])
 
 ;; -------------------------
 ;; Initialize app

@@ -25,8 +25,3 @@
   (mount/stop)
   (refresh :after 'dev/go))
 
-(comment
-  (defn reset-and-test []
-    (reset)
-    (time (test-all)))
-)

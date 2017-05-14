@@ -1,5 +1,26 @@
 # Things I Learn
 
+## Format clojure code, argggg...
+
+`
+:plugins [[lein-cljfmt "0.5.6"]]
+
+lein cljfmt check
+lein cljfmt fix
+`
+
+- https://github.com/weavejester/cljfmt
+
+## configure Clojure Code Extension (Visual Studio COde)
+
+```
+
+tools jar: /Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/lib/tools.jar
+
+{:debug-repl {:resource-paths [#=(eval (System/getenv "PATH_TO_TOOLS_JAR"))]
+              :repl-options {:nrepl-middleware [debug-middleware.core/debug-middleware]}
+              :dependencies [[debug-middleware #=(eval (System/getenv "DEBUG_MIDDLEWARE_VERSION"))]]}
+````
 ## yada 
 
 - https://github.com/juxt/yada
