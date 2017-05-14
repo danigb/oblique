@@ -17,7 +17,13 @@ To start a web server for the application, run:
 ```
 lein repl
 user=> (dev)
+user=> (go)
+user=> (reset)
 ```
+
+You can access at: http://localhost:8080/api/1.0/status
+
+Using Figwheel within nREPL: https://github.com/bhauman/lein-figwheel/wiki/Using-the-Figwheel-REPL-within-NRepl
 
 
 

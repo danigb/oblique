@@ -1,5 +1,19 @@
 # Things I Learn
 
+## configure visual:clojure (Visual Studio Code) arggg!
+
+Make sure the dependencies is either in your project.clj or profiles.clj:
+
+A sample profiles.clj could look like this:
+(profiles.clj is located in your home/.lein folder)
+
+```clojure
+{:user {:plugins [[cider/cider-nrepl "0.14.0"]]
+        :dependencies [[org.clojure/tools.nrepl "0.2.10"]]}
+```
+
+- https://marketplace.visualstudio.com/items?itemName=stiansivertsen.visualclojure
+
 ## Format clojure code, argggg...
 
 `

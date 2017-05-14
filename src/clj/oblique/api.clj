@@ -1,6 +1,5 @@
 (ns oblique.api
   (:require
-   [bidi.ring]
    [yada.yada :as yada]))
 
 (defn api [db]

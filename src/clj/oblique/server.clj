@@ -9,7 +9,7 @@
    :body "hello server!"})
 
 (defn start []
-  (http/start-server api/handler {:port 8080}))
+  (http/start-server (api/handler) {:port 8080}))
 
 (defn stop [server]
   (.close server))
