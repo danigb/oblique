@@ -1,15 +1,25 @@
 (ns oblique.server
   (require [aleph.http :as http]
-           [oblique.api :as api]
+           [yada.yada :as yada]
+           [yada.handler :refer [as-handler]]
            [mount.core :refer [defstate]]))
 
-(defn old-handler [req]
-  {:status 200
-   :headers {"content-type" "text/plain"}
-   :body "hello server!"})
+(defn status-resource [] 
+  (yada/resource 
+    {:methods 
+      {:get 
+        {:produces "text/plain"
+         :response "API working!"}}}))
+
+(defn api []
+  ["/api", 
+    {"/status" (status-resource)}
+    {"/ctx" (yada/resource {:response (fn [ctx] (str ctx))})}])
+
+(defn handler [routes] (as-handler routes))
 
 (defn start []
-  (http/start-server (api/handler) {:port 8080}))
+  (http/start-server (handler (api)) {:port 8080}))
 
 (defn stop [server]
   (.close server))

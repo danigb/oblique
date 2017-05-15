@@ -1,5 +1,19 @@
 # Things I Learn
 
+## web server handler
+
+```clojure
+(defn old-handler [req]
+  {:status 200
+   :headers {"content-type" "text/plain"}
+   :body "hello server!"})
+```
+
+## main
+
+(defn -main [& args])
+
+
 ## configure visual:clojure (Visual Studio Code) arggg!
 
 Make sure the dependencies is either in your project.clj or profiles.clj:
